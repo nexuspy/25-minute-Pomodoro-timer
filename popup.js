@@ -5,8 +5,10 @@ let timeLeft = 1500; // 25 minutes in seconds
 function updateTimerText() {
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
-  const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-  document.getElementById('timer-text').textContent = formattedTime;
+  const formattedTime = `${String(minutes).padStart(2, "0")}:${String(
+    seconds
+  ).padStart(2, "0")}`;
+  document.getElementById("timer-text").textContent = formattedTime;
 }
 
 function startTimer() {
@@ -25,8 +27,25 @@ function startTimer() {
   }
 }
 
-document.getElementById('start-button').addEventListener('click', () => {
+function pauseTimer() {
+  if (timerRunning) {
+    clearInterval(timer);
+    timerRunning = false;
+  }
+}
+
+document.getElementById("start-button").addEventListener("click", () => {
   startTimer();
+});
+
+document.getElementById("pause-button").addEventListener("click", () => {
+  if (timerRunning) {
+    pauseTimer();
+    pauseButton.textContent = "Resume";
+  } else {
+    startTimer();
+    pauseButton.textContent = "Pause";
+  }
 });
 
 // Initial timer text update

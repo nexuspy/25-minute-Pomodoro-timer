@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="popup.css">
-</head>
-<body>
-  <div class="timer">
-    <div class="circle">
-      <span id="timer-text">25:00</span>
+  <head>
+    <link rel="stylesheet" type="text/css" href="popup.css" />
+  </head>
+  <body>
+    <div class="timer">
+      <div class="circle">
+        <span id="timer-text">25:00</span>
+      </div>
+      <button id="start-button">Start</button>
+      <button id="pause-button">Pause</button>
     </div>
-    <button id="start-button">Start</button>
-  </div>
-  <audio id="background-audio" autoplay loop>
-    <source src="background-sound.mp3" type="audio/mpeg">
-  </audio>
-  <script src="popup.js"></script>
-</body>
+    <audio id="background-audio" autoplay loop>
+      <source src="background-sound.mp3" type="audio/mpeg" />
+    </audio>
+    <script src="popup.js"></script>
+  </body>
 </html>
